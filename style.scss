@@ -1,0 +1,75 @@
+@import "./scss/variables";
+@import "./scss/mixin";
+@import "./scss/functions";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500&display=swap");
+
+@import "./scss/reset";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+    /* font-size: 10px; */
+  font-size: convertUnits(10);
+}
+
+div {
+  border: 2px solid $color-primary;
+  margin: 40px 100px;
+  height: 47vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+
+  h1 {
+    @include exercice-title($color-tertiary, $color-secondary);
+    margin-bottom: 30px;
+  }
+
+  .main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 20px;
+
+    article {
+      @include article(none, $color-secondary);
+
+      p {
+        @include article-assets($color-secondary, none, 16px);
+      }
+
+      .red {
+        @include article-assets($color-primary, none, none);
+      }
+    }
+  }
+
+  .footer {
+    height: 150px;
+    width: 100%;
+
+    article {
+      @include article-assets(none, $color-secondary);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      p {
+        @include article-assets($color-tertiary, none, 24px);
+      }
+    }
+  }
+}
